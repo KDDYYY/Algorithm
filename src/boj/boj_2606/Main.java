@@ -17,7 +17,7 @@ public class Main {
         arr = new int[node + 1][node + 1];
         check = new boolean[node + 1];
 
-        for(int i = 0; i < node; i++) {
+        for(int i = 0; i < line; i++) {
             int A = sc.nextInt();
             int B = sc.nextInt();
 
@@ -26,6 +26,7 @@ public class Main {
 
         dfs(1);
 
+
         System.out.println(count - 1);
 
     }
@@ -33,11 +34,9 @@ public class Main {
         check[start] = true;
         count++;
 
-        for(int i = 0 ; i <= node; i++) {
+        for(int i = 1 ; i <= node; i++) {
             if(arr[start][i] == 1 && !check[i])
                 dfs(i);
         }
     }
-
-
 }
